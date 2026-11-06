@@ -1,0 +1,14 @@
+package vn.edu.hust.sis.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import vn.edu.hust.sis.entity.Student;
+
+import java.util.Optional;
+
+@Repository
+public interface StudentRepository extends JpaRepository<Student, Integer> {
+    Optional<Student> findByStudentCode(String studentCode);
+    boolean existsByStudentCode(String studentCode);
+}
+
